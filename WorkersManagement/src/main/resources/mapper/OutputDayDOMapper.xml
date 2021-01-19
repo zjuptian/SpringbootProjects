@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tp.management.mapping.OutputDayDOMapper" >
+  <resultMap id="BaseResultMap" type="com.tp.management.model.OutputDayDO" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="worker_id" property="workerId" jdbcType="INTEGER" />
+    <result column="count" property="count" jdbcType="INTEGER" />
+    <result column="date" property="date" jdbcType="VARCHAR" />
+    <result column="output_1" property="output1" jdbcType="INTEGER" />
+    <result column="output_2" property="output2" jdbcType="INTEGER" />
+    <result column="output_3" property="output3" jdbcType="INTEGER" />
+    <result column="output_4" property="output4" jdbcType="INTEGER" />
+    <result column="output_5" property="output5" jdbcType="INTEGER" />
+    <result column="output_6" property="output6" jdbcType="INTEGER" />
+    <result column="output_7" property="output7" jdbcType="INTEGER" />
+    <result column="output_8" property="output8" jdbcType="INTEGER" />
+    <result column="output_9" property="output9" jdbcType="INTEGER" />
+    <result column="output_10" property="output10" jdbcType="INTEGER" />
+    <result column="output_11" property="output11" jdbcType="INTEGER" />
+    <result column="output_12" property="output12" jdbcType="INTEGER" />
+    <result column="output_13" property="output13" jdbcType="INTEGER" />
+    <result column="output_14" property="output14" jdbcType="INTEGER" />
+    <result column="output_15" property="output15" jdbcType="INTEGER" />
+    <result column="output_16" property="output16" jdbcType="INTEGER" />
+    <result column="output_17" property="output17" jdbcType="INTEGER" />
+    <result column="output_18" property="output18" jdbcType="INTEGER" />
+    <result column="output_19" property="output19" jdbcType="INTEGER" />
+    <result column="output_20" property="output20" jdbcType="INTEGER" />
+    <result column="output_21" property="output21" jdbcType="INTEGER" />
+    <result column="output_22" property="output22" jdbcType="INTEGER" />
+    <result column="output_23" property="output23" jdbcType="INTEGER" />
+    <result column="output_24" property="output24" jdbcType="INTEGER" />
+    <result column="output_25" property="output25" jdbcType="INTEGER" />
+    <result column="output_26" property="output26" jdbcType="INTEGER" />
+    <result column="output_27" property="output27" jdbcType="INTEGER" />
+    <result column="output_28" property="output28" jdbcType="INTEGER" />
+    <result column="output_29" property="output29" jdbcType="INTEGER" />
+    <result column="output_30" property="output30" jdbcType="INTEGER" />
+    <result column="output_day" property="outputDay" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, worker_id, count, date, output_1, output_2, output_3, output_4, output_5, output_6, 
+    output_7, output_8, output_9, output_10, output_11, output_12, output_13, output_14, 
+    output_15, output_16, output_17, output_18, output_19, output_20, output_21, output_22, 
+    output_23, output_24, output_25, output_26, output_27, output_28, output_29, output_30, 
+    output_day
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from workers_detail
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from workers_detail
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.tp.management.model.OutputDayDO" >
+    insert into workers_detail (id, worker_id, count, 
+      date, output_1, output_2, 
+      output_3, output_4, output_5, 
+      output_6, output_7, output_8, 
+      output_9, output_10, output_11, 
+      output_12, output_13, output_14, 
+      output_15, output_16, output_17, 
+      output_18, output_19, output_20, 
+      output_21, output_22, output_23, 
+      output_24, output_25, output_26, 
+      output_27, output_28, output_29, 
+      output_30, output_day)
+    values (#{id,jdbcType=INTEGER}, #{workerId,jdbcType=INTEGER}, #{count,jdbcType=INTEGER}, 
+      #{date,jdbcType=VARCHAR}, #{output1,jdbcType=INTEGER}, #{output2,jdbcType=INTEGER}, 
+      #{output3,jdbcType=INTEGER}, #{output4,jdbcType=INTEGER}, #{output5,jdbcType=INTEGER}, 
+      #{output6,jdbcType=INTEGER}, #{output7,jdbcType=INTEGER}, #{output8,jdbcType=INTEGER}, 
+      #{output9,jdbcType=INTEGER}, #{output10,jdbcType=INTEGER}, #{output11,jdbcType=INTEGER}, 
+      #{output12,jdbcType=INTEGER}, #{output13,jdbcType=INTEGER}, #{output14,jdbcType=INTEGER}, 
+      #{output15,jdbcType=INTEGER}, #{output16,jdbcType=INTEGER}, #{output17,jdbcType=INTEGER}, 
+      #{output18,jdbcType=INTEGER}, #{output19,jdbcType=INTEGER}, #{output20,jdbcType=INTEGER}, 
+      #{output21,jdbcType=INTEGER}, #{output22,jdbcType=INTEGER}, #{output23,jdbcType=INTEGER}, 
+      #{output24,jdbcType=INTEGER}, #{output25,jdbcType=INTEGER}, #{output26,jdbcType=INTEGER}, 
+      #{output27,jdbcType=INTEGER}, #{output28,jdbcType=INTEGER}, #{output29,jdbcType=INTEGER}, 
+      #{output30,jdbcType=INTEGER}, #{outputDay,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tp.management.model.OutputDayDO" >
+    insert into workers_detail
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="workerId != null" >
+        worker_id,
+      </if>
+      <if test="count != null" >
+        count,
+      </if>
+      <if test="date != null" >
+        date,
+      </if>
+      <if test="output1 != null" >
+        output_1,
+      </if>
+      <if test="output2 != null" >
+        output_2,
+      </if>
+      <if test="output3 != null" >
+        output_3,
+      </if>
+      <if test="output4 != null" >
+        output_4,
+      </if>
+      <if test="output5 != null" >
+        output_5,
+      </if>
+      <if test="output6 != null" >
+        output_6,
+      </if>
+      <if test="output7 != null" >
+        output_7,
+      </if>
+      <if test="output8 != null" >
+        output_8,
+      </if>
+      <if test="output9 != null" >
+        output_9,
+      </if>
+      <if test="output10 != null" >
+        output_10,
+      </if>
+      <if test="output11 != null" >
+        output_11,
+      </if>
+      <if test="output12 != null" >
+        output_12,
+      </if>
+      <if test="output13 != null" >
+        output_13,
+      </if>
+      <if test="output14 != null" >
+        output_14,
+      </if>
+      <if test="output15 != null" >
+        output_15,
+      </if>
+      <if test="output16 != null" >
+        output_16,
+      </if>
+      <if test="output17 != null" >
+        output_17,
+      </if>
+      <if test="output18 != null" >
+        output_18,
+      </if>
+      <if test="output19 != null" >
+        output_19,
+      </if>
+      <if test="output20 != null" >
+        output_20,
+      </if>
+      <if test="output21 != null" >
+        output_21,
+      </if>
+      <if test="output22 != null" >
+        output_22,
+      </if>
+      <if test="output23 != null" >
+        output_23,
+      </if>
+      <if test="output24 != null" >
+        output_24,
+      </if>
+      <if test="output25 != null" >
+        output_25,
+      </if>
+      <if test="output26 != null" >
+        output_26,
+      </if>
+      <if test="output27 != null" >
+        output_27,
+      </if>
+      <if test="output28 != null" >
+        output_28,
+      </if>
+      <if test="output29 != null" >
+        output_29,
+      </if>
+      <if test="output30 != null" >
+        output_30,
+      </if>
+      <if test="outputDay != null" >
+        output_day,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="workerId != null" >
+        #{workerId,jdbcType=INTEGER},
+      </if>
+      <if test="count != null" >
+        #{count,jdbcType=INTEGER},
+      </if>
+      <if test="date != null" >
+        #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="output1 != null" >
+        #{output1,jdbcType=INTEGER},
+      </if>
+      <if test="output2 != null" >
+        #{output2,jdbcType=INTEGER},
+      </if>
+      <if test="output3 != null" >
+        #{output3,jdbcType=INTEGER},
+      </if>
+      <if test="output4 != null" >
+        #{output4,jdbcType=INTEGER},
+      </if>
+      <if test="output5 != null" >
+        #{output5,jdbcType=INTEGER},
+      </if>
+      <if test="output6 != null" >
+        #{output6,jdbcType=INTEGER},
+      </if>
+      <if test="output7 != null" >
+        #{output7,jdbcType=INTEGER},
+      </if>
+      <if test="output8 != null" >
+        #{output8,jdbcType=INTEGER},
+      </if>
+      <if test="output9 != null" >
+        #{output9,jdbcType=INTEGER},
+      </if>
+      <if test="output10 != null" >
+        #{output10,jdbcType=INTEGER},
+      </if>
+      <if test="output11 != null" >
+        #{output11,jdbcType=INTEGER},
+      </if>
+      <if test="output12 != null" >
+        #{output12,jdbcType=INTEGER},
+      </if>
+      <if test="output13 != null" >
+        #{output13,jdbcType=INTEGER},
+      </if>
+      <if test="output14 != null" >
+        #{output14,jdbcType=INTEGER},
+      </if>
+      <if test="output15 != null" >
+        #{output15,jdbcType=INTEGER},
+      </if>
+      <if test="output16 != null" >
+        #{output16,jdbcType=INTEGER},
+      </if>
+      <if test="output17 != null" >
+        #{output17,jdbcType=INTEGER},
+      </if>
+      <if test="output18 != null" >
+        #{output18,jdbcType=INTEGER},
+      </if>
+      <if test="output19 != null" >
+        #{output19,jdbcType=INTEGER},
+      </if>
+      <if test="output20 != null" >
+        #{output20,jdbcType=INTEGER},
+      </if>
+      <if test="output21 != null" >
+        #{output21,jdbcType=INTEGER},
+      </if>
+      <if test="output22 != null" >
+        #{output22,jdbcType=INTEGER},
+      </if>
+      <if test="output23 != null" >
+        #{output23,jdbcType=INTEGER},
+      </if>
+      <if test="output24 != null" >
+        #{output24,jdbcType=INTEGER},
+      </if>
+      <if test="output25 != null" >
+        #{output25,jdbcType=INTEGER},
+      </if>
+      <if test="output26 != null" >
+        #{output26,jdbcType=INTEGER},
+      </if>
+      <if test="output27 != null" >
+        #{output27,jdbcType=INTEGER},
+      </if>
+      <if test="output28 != null" >
+        #{output28,jdbcType=INTEGER},
+      </if>
+      <if test="output29 != null" >
+        #{output29,jdbcType=INTEGER},
+      </if>
+      <if test="output30 != null" >
+        #{output30,jdbcType=INTEGER},
+      </if>
+      <if test="outputDay != null" >
+        #{outputDay,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tp.management.model.OutputDayDO" >
+    update workers_detail
+    <set >
+      <if test="workerId != null" >
+        worker_id = #{workerId,jdbcType=INTEGER},
+      </if>
+      <if test="count != null" >
+        count = #{count,jdbcType=INTEGER},
+      </if>
+      <if test="date != null" >
+        date = #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="output1 != null" >
+        output_1 = #{output1,jdbcType=INTEGER},
+      </if>
+      <if test="output2 != null" >
+        output_2 = #{output2,jdbcType=INTEGER},
+      </if>
+      <if test="output3 != null" >
+        output_3 = #{output3,jdbcType=INTEGER},
+      </if>
+      <if test="output4 != null" >
+        output_4 = #{output4,jdbcType=INTEGER},
+      </if>
+      <if test="output5 != null" >
+        output_5 = #{output5,jdbcType=INTEGER},
+      </if>
+      <if test="output6 != null" >
+        output_6 = #{output6,jdbcType=INTEGER},
+      </if>
+      <if test="output7 != null" >
+        output_7 = #{output7,jdbcType=INTEGER},
+      </if>
+      <if test="output8 != null" >
+        output_8 = #{output8,jdbcType=INTEGER},
+      </if>
+      <if test="output9 != null" >
+        output_9 = #{output9,jdbcType=INTEGER},
+      </if>
+      <if test="output10 != null" >
+        output_10 = #{output10,jdbcType=INTEGER},
+      </if>
+      <if test="output11 != null" >
+        output_11 = #{output11,jdbcType=INTEGER},
+      </if>
+      <if test="output12 != null" >
+        output_12 = #{output12,jdbcType=INTEGER},
+      </if>
+      <if test="output13 != null" >
+        output_13 = #{output13,jdbcType=INTEGER},
+      </if>
+      <if test="output14 != null" >
+        output_14 = #{output14,jdbcType=INTEGER},
+      </if>
+      <if test="output15 != null" >
+        output_15 = #{output15,jdbcType=INTEGER},
+      </if>
+      <if test="output16 != null" >
+        output_16 = #{output16,jdbcType=INTEGER},
+      </if>
+      <if test="output17 != null" >
+        output_17 = #{output17,jdbcType=INTEGER},
+      </if>
+      <if test="output18 != null" >
+        output_18 = #{output18,jdbcType=INTEGER},
+      </if>
+      <if test="output19 != null" >
+        output_19 = #{output19,jdbcType=INTEGER},
+      </if>
+      <if test="output20 != null" >
+        output_20 = #{output20,jdbcType=INTEGER},
+      </if>
+      <if test="output21 != null" >
+        output_21 = #{output21,jdbcType=INTEGER},
+      </if>
+      <if test="output22 != null" >
+        output_22 = #{output22,jdbcType=INTEGER},
+      </if>
+      <if test="output23 != null" >
+        output_23 = #{output23,jdbcType=INTEGER},
+      </if>
+      <if test="output24 != null" >
+        output_24 = #{output24,jdbcType=INTEGER},
+      </if>
+      <if test="output25 != null" >
+        output_25 = #{output25,jdbcType=INTEGER},
+      </if>
+      <if test="output26 != null" >
+        output_26 = #{output26,jdbcType=INTEGER},
+      </if>
+      <if test="output27 != null" >
+        output_27 = #{output27,jdbcType=INTEGER},
+      </if>
+      <if test="output28 != null" >
+        output_28 = #{output28,jdbcType=INTEGER},
+      </if>
+      <if test="output29 != null" >
+        output_29 = #{output29,jdbcType=INTEGER},
+      </if>
+      <if test="output30 != null" >
+        output_30 = #{output30,jdbcType=INTEGER},
+      </if>
+      <if test="outputDay != null" >
+        output_day = #{outputDay,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tp.management.model.OutputDayDO" >
+    update workers_detail
+    set worker_id = #{workerId,jdbcType=INTEGER},
+      count = #{count,jdbcType=INTEGER},
+      date = #{date,jdbcType=VARCHAR},
+      output_1 = #{output1,jdbcType=INTEGER},
+      output_2 = #{output2,jdbcType=INTEGER},
+      output_3 = #{output3,jdbcType=INTEGER},
+      output_4 = #{output4,jdbcType=INTEGER},
+      output_5 = #{output5,jdbcType=INTEGER},
+      output_6 = #{output6,jdbcType=INTEGER},
+      output_7 = #{output7,jdbcType=INTEGER},
+      output_8 = #{output8,jdbcType=INTEGER},
+      output_9 = #{output9,jdbcType=INTEGER},
+      output_10 = #{output10,jdbcType=INTEGER},
+      output_11 = #{output11,jdbcType=INTEGER},
+      output_12 = #{output12,jdbcType=INTEGER},
+      output_13 = #{output13,jdbcType=INTEGER},
+      output_14 = #{output14,jdbcType=INTEGER},
+      output_15 = #{output15,jdbcType=INTEGER},
+      output_16 = #{output16,jdbcType=INTEGER},
+      output_17 = #{output17,jdbcType=INTEGER},
+      output_18 = #{output18,jdbcType=INTEGER},
+      output_19 = #{output19,jdbcType=INTEGER},
+      output_20 = #{output20,jdbcType=INTEGER},
+      output_21 = #{output21,jdbcType=INTEGER},
+      output_22 = #{output22,jdbcType=INTEGER},
+      output_23 = #{output23,jdbcType=INTEGER},
+      output_24 = #{output24,jdbcType=INTEGER},
+      output_25 = #{output25,jdbcType=INTEGER},
+      output_26 = #{output26,jdbcType=INTEGER},
+      output_27 = #{output27,jdbcType=INTEGER},
+      output_28 = #{output28,jdbcType=INTEGER},
+      output_29 = #{output29,jdbcType=INTEGER},
+      output_30 = #{output30,jdbcType=INTEGER},
+      output_day = #{outputDay,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
