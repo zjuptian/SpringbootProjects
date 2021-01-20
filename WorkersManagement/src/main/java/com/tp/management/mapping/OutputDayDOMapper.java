@@ -1,6 +1,9 @@
 package com.tp.management.mapping;
 
 import com.tp.management.model.OutputDayDO;
+import com.tp.management.vo.OutputVO;
+
+import java.util.List;
 
 public interface OutputDayDOMapper {
     int deleteByPrimaryKey(Integer id);
@@ -14,4 +17,8 @@ public interface OutputDayDOMapper {
     int updateByPrimaryKeySelective(OutputDayDO record);
 
     int updateByPrimaryKey(OutputDayDO record);
+
+    List<OutputDayDO> selectAll(String date);
+
+    OutputDayDO selectByWokerIdAndDate(OutputVO outputVO);
 }

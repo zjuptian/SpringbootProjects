@@ -39,46 +39,63 @@
     <result column="output_day" property="outputDay" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, worker_id, count, date, output_1, output_2, output_3, output_4, output_5, output_6, 
-    output_7, output_8, output_9, output_10, output_11, output_12, output_13, output_14, 
-    output_15, output_16, output_17, output_18, output_19, output_20, output_21, output_22, 
-    output_23, output_24, output_25, output_26, output_27, output_28, output_29, output_30, 
+    id, worker_id, count, date, output_1, output_2, output_3, output_4, output_5, output_6,
+    output_7, output_8, output_9, output_10, output_11, output_12, output_13, output_14,
+    output_15, output_16, output_17, output_18, output_19, output_20, output_21, output_22,
+    output_23, output_24, output_25, output_26, output_27, output_28, output_29, output_30,
     output_day
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
+    select
     <include refid="Base_Column_List" />
     from workers_detail
     where id = #{id,jdbcType=INTEGER}
   </select>
+
+  <select id="selectAll" resultMap="BaseResultMap"  parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from workers_detail
+    where date = #{date,jdbcType=VARCHAR}
+  </select>
+
+  <select id="selectByWokerIdAndDate" resultMap="BaseResultMap"  parameterType="com.tp.management.vo.OutputVO" >
+    select
+    <include refid="Base_Column_List" />
+    from workers_detail
+    where date = #{date,jdbcType=VARCHAR} and worker_id = #{worker_id,jdbcType=INTEGER}
+  </select>
+
+
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from workers_detail
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.tp.management.model.OutputDayDO" >
-    insert into workers_detail (id, worker_id, count, 
-      date, output_1, output_2, 
-      output_3, output_4, output_5, 
-      output_6, output_7, output_8, 
-      output_9, output_10, output_11, 
-      output_12, output_13, output_14, 
-      output_15, output_16, output_17, 
-      output_18, output_19, output_20, 
-      output_21, output_22, output_23, 
-      output_24, output_25, output_26, 
-      output_27, output_28, output_29, 
+    insert into workers_detail (id, worker_id, count,
+      date, output_1, output_2,
+      output_3, output_4, output_5,
+      output_6, output_7, output_8,
+      output_9, output_10, output_11,
+      output_12, output_13, output_14,
+      output_15, output_16, output_17,
+      output_18, output_19, output_20,
+      output_21, output_22, output_23,
+      output_24, output_25, output_26,
+      output_27, output_28, output_29,
       output_30, output_day)
-    values (#{id,jdbcType=INTEGER}, #{workerId,jdbcType=INTEGER}, #{count,jdbcType=INTEGER}, 
-      #{date,jdbcType=VARCHAR}, #{output1,jdbcType=INTEGER}, #{output2,jdbcType=INTEGER}, 
-      #{output3,jdbcType=INTEGER}, #{output4,jdbcType=INTEGER}, #{output5,jdbcType=INTEGER}, 
-      #{output6,jdbcType=INTEGER}, #{output7,jdbcType=INTEGER}, #{output8,jdbcType=INTEGER}, 
-      #{output9,jdbcType=INTEGER}, #{output10,jdbcType=INTEGER}, #{output11,jdbcType=INTEGER}, 
-      #{output12,jdbcType=INTEGER}, #{output13,jdbcType=INTEGER}, #{output14,jdbcType=INTEGER}, 
-      #{output15,jdbcType=INTEGER}, #{output16,jdbcType=INTEGER}, #{output17,jdbcType=INTEGER}, 
-      #{output18,jdbcType=INTEGER}, #{output19,jdbcType=INTEGER}, #{output20,jdbcType=INTEGER}, 
-      #{output21,jdbcType=INTEGER}, #{output22,jdbcType=INTEGER}, #{output23,jdbcType=INTEGER}, 
-      #{output24,jdbcType=INTEGER}, #{output25,jdbcType=INTEGER}, #{output26,jdbcType=INTEGER}, 
-      #{output27,jdbcType=INTEGER}, #{output28,jdbcType=INTEGER}, #{output29,jdbcType=INTEGER}, 
+    values (#{id,jdbcType=INTEGER}, #{workerId,jdbcType=INTEGER}, #{count,jdbcType=INTEGER},
+      #{date,jdbcType=VARCHAR}, #{output1,jdbcType=INTEGER}, #{output2,jdbcType=INTEGER},
+      #{output3,jdbcType=INTEGER}, #{output4,jdbcType=INTEGER}, #{output5,jdbcType=INTEGER},
+      #{output6,jdbcType=INTEGER}, #{output7,jdbcType=INTEGER}, #{output8,jdbcType=INTEGER},
+      #{output9,jdbcType=INTEGER}, #{output10,jdbcType=INTEGER}, #{output11,jdbcType=INTEGER},
+      #{output12,jdbcType=INTEGER}, #{output13,jdbcType=INTEGER}, #{output14,jdbcType=INTEGER},
+      #{output15,jdbcType=INTEGER}, #{output16,jdbcType=INTEGER}, #{output17,jdbcType=INTEGER},
+      #{output18,jdbcType=INTEGER}, #{output19,jdbcType=INTEGER}, #{output20,jdbcType=INTEGER},
+      #{output21,jdbcType=INTEGER}, #{output22,jdbcType=INTEGER}, #{output23,jdbcType=INTEGER},
+      #{output24,jdbcType=INTEGER}, #{output25,jdbcType=INTEGER}, #{output26,jdbcType=INTEGER},
+      #{output27,jdbcType=INTEGER}, #{output28,jdbcType=INTEGER}, #{output29,jdbcType=INTEGER},
       #{output30,jdbcType=INTEGER}, #{outputDay,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.tp.management.model.OutputDayDO" >

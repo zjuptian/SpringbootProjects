@@ -11,4 +11,10 @@ import java.util.List;
  */
 public interface WorkerService {
     List<WorkerDO> getWorkerList();
+
+    WorkerDO addWorker(WorkerDO workerDO);
+
+    WorkerDO updateWorker(WorkerDO workerDO);
+
+    WorkerDO deleteWorker(WorkerDO workerDO);
 }

@@ -23,4 +23,22 @@ public class WorkerServiceImpl implements WorkerService {
         List<WorkerDO> list = workerDOMapper.selectAll();
         return list;
     }
+
+    @Override
+    public WorkerDO addWorker(WorkerDO workerDO) {
+        workerDOMapper.insert(workerDO);
+        return workerDO;
+    }
+
+    @Override
+    public WorkerDO updateWorker(WorkerDO workerDO) {
+        workerDOMapper.updateByPrimaryKey(workerDO);
+        return workerDO;
+    }
+
+    @Override
+    public WorkerDO deleteWorker(WorkerDO workerDO) {
+        workerDOMapper.deleteByPrimaryKey(workerDO.getId());
+        return workerDO;
+    }
 }
